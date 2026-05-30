@@ -183,11 +183,11 @@ var cinpBuilder = {};
               }
               else if( type == 'Model' )
               {
-                deferred.resolve( { type: 'model', name: data.name, doc: data.doc, path: data.path, constant_list: data.constants, field_list: data.fields, action_list: data.actions, not_allowed_verbs: data[ 'not-allowed-verbs' ], list_filter_list: data[ 'list-filters' ] }, uri );
+                deferred.resolve( { type: 'model', name: data.name, doc: data.doc, path: data.path, constant_list: data.constants, field_list: data.fields, action_list: data.actions, id_field_name: data[ 'id-field-name' ], not_allowed_verbs: data[ 'not-allowed-verbs' ], list_filter_list: data[ 'list-filters' ] }, uri );
               }
               else if( type == 'Action' )
               {
-                deferred.resolve( { type: 'model', name: data.name, doc: data.doc, path: data.path, return_type: data[ 'return-type' ], static: data.static, paramaters: data.paramaters }, uri );
+                deferred.resolve( { type: 'model', name: data.name, doc: data.doc, path: data.path, return_type: data[ 'return-type' ], static: data.static, parameters: data.parameters }, uri );
               }
               else
               {
@@ -319,7 +319,7 @@ var cinpBuilder = {};
         return deferred.promise();
       };
 
-      cinp.call = function( uri, paramater_map, force_multi_mode )
+      cinp.call = function( uri, parameter_map, force_multi_mode )
       {
         var deferred = $.Deferred();
 
@@ -328,7 +328,7 @@ var cinpBuilder = {};
           force_multi_mode = false;
         }
 
-        var request = this._request( 'CALL', uri, paramater_map, { 'Multi-Object': force_multi_mode } );
+        var request = this._request( 'CALL', uri, parameter_map, { 'Multi-Object': force_multi_mode } );
 
         request
           .done(
