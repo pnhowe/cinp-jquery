@@ -1,12 +1,12 @@
 /*
  * CInP jquery client
- * version 0.9
- * for CInP API version 0.9
+ * version 2.0
+ * for CInP API version 2.0
  *
  * Copyright Peter Howe, Floyd Arguello
  * Released under the Apache 2.0 license
  *
- * Last modified 2016-03-09
+ * Last modified 2025-06-02
  */
 
 var cinpBuilder = {};
@@ -59,7 +59,7 @@ var cinpBuilder = {};
           url: this.host + uri,
           dataType: 'json',
           accepts: { json: 'application/json', text: 'application/json' },
-          headers: $.extend( {}, header_map, { 'CInP-Version': '1.0' } ),
+          headers: $.extend( {}, header_map, { 'CInP-Version': '2.0' } ),
           data: JSON.stringify( data ),
           contentType: 'application/json',
           processData: false,
